@@ -1,0 +1,4 @@
+<app-search (searchCity)="citySearch($event)"></app-search>
+<div *ngIf="(weatherList$ | async) as weatherList">
+  <app-results [weatherList]="weatherList"></app-results>
+</div>

@@ -13,13 +13,13 @@ export interface Coordinates {
 
 export interface Forecast {
   temp: number;
-  temp_min: number;
-  temp_max: number;
-  pressure: number;
-  sea_level: number;
-  grnd_level: number;
-  humidity: number;
-  temp_kf: number;
+  temp_min?: number;
+  temp_max?: number;
+  pressure?: number;
+  sea_level?: number;
+  grnd_level?: number;
+  humidity?: number;
+  temp_kf?: number;
 }
 
 export interface WeatherDescription {
@@ -43,13 +43,13 @@ export interface WeatherSys {
 }
 
 export interface WeatherList {
-  dt: number;
+  dt?: number;
   main: Forecast;
-  weather: WeatherDescription[];
-  clouds: Clouds;
-  wind: Wind;
-  sys: WeatherSys;
-  dt_txt: string;
+  weather?: WeatherDescription[];
+  clouds?: Clouds;
+  wind?: Wind;
+  sys?: WeatherSys;
+  dt_txt?: string;
 }
 
 export interface Weather {

@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html'
+  templateUrl: './search.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent {
-  // IMPLEMENT ANY INPUT OR OUTPUT YOU MIGHT NEED
+  city: string;
+
+  @Output()
+  public searchCity: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   search() {
-    // TO BE IMPLEMENTED
+    this.searchCity.emit(this.city);
+    this.city = '';
   }
 }
